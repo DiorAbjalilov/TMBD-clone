@@ -4,6 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/styleHome.css">
     <title>The Movie Database</title>
@@ -11,6 +14,106 @@
 
 <body>
 
+    <div id="body_wrap">
+        <header class="hederMenu">
+            <div class="menu">
+                <div class="left_text">
+                    <a class="logo" href="/"><img src="./imgs/logo.svg" alt=""></a>
+                    <ul class="menu_items">
+                        <li class="item">
+                            <a class="link" href="#">
+                                Movies
+                            </a>
+                            <div class="contextMenu">
+                                <ul class="con_group">
+                                    <li><a href="#">Popular</a></li>
+                                    <li><a href="#">Now Playing</a></li>
+                                    <li><a href="#">Upcoming</a></li>
+                                    <li><a href="#">Top Rated</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="item">
+                            <a class="link" href="#">
+                                TV Shows
+                            </a>
+                            <div class="contextMenu">
+                                <ul class="con_group">
+                                    <li><a href="#">Popular</a></li>
+                                    <li><a href="#">Airing Today</a></li>
+                                    <li><a href="#">On TV</a></li>
+                                    <li><a href="#">Top Rated</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="item">
+                            <a class="link" href="#">
+                                People
+                            </a>
+                            <div class="contextMenu">
+                                <ul class="con_group">
+                                    <li><a href="#">Popular People</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="item">
+                            <a class="link" href="#">
+                                More
+                            </a>
+                            <div class="contextMenu">
+                                <ul class="con_group">
+                                    <li><a href="#">Discussions</a></li>
+                                    <li><a href="#">Leaderboard</a></li>
+                                    <li><a href="#">Support</a></li>
+                                    <li><a href="#">API</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="right_text">
+                    <ul class="langIcon">
+                        <li class="plusIcon">
+                            <a href="#"><i class="fas fa-plus"></i></a>
+                            <div class="plusTitle">
+                                <p>Can't find a movie or TV show? Login to create it.</p>
+                            </div>
+                        </li>
+                        <li><a class="languar" href="#">EN</a></li>
+                        <li><a href="#">Login</a></li>
+                        <li><a href="#">Join TMDb</a></li>
+                        <li><a class="searchIcon" href="#"><i class="fas fa-search"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <main id="main">
+            <section class="inner_content new_index">
+                <div class="media discover">
+                    <div class="column_wrapper">
+                        <div class="content_wrapper wrap">
+                            <div class="title">
+                                <h2>Welcome.</h2>
+                                <h3>Millions of movies, TV shows and people to discover. Explore now.</h3>
+                            </div>
+                            <div class="search">
+                                <form id="inner_search_form">
+                                    <label for="">
+                                        <input placeholder="Search for a movie, tv show, person......"
+                                            id="inner_search_v4" type="text">
+                                    </label>
+                                    <input type="submit" value="Search">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+
+    <script src="./js/main.js"></script>
 </body>
 
 </html>
