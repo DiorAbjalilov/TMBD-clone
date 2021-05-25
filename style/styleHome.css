@@ -268,10 +268,7 @@ section.inner_content .media {
   display: flex;
   align-items: flex-start;
   align-content: flex-start;
-  padding-left: 40px;
-  padding-right: 40px;
   padding-top: 30px;
-  padding-bottom: 30px;
   flex-direction: column;
 }
 .media .content_wrapper .title {

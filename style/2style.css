@@ -1,3 +1,6 @@
+.column {
+  width: 100%;
+}
 section.inner_content .no_pad {
   display: flex;
   flex-wrap: wrap;
@@ -84,6 +87,7 @@ section.inner_content div.selector h3 a {
 }
 .column div.media {
   width: 100%;
+  margin-left: 0;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -97,7 +101,7 @@ section.inner_content div.column_content.flex.scroller.loaded {
 section.inner_content div.column_content.flex.scroller {
   width: 100%;
   min-height: 355px;
-  overflow-x: scroll;
+  overflow-x: auto;
   overflow-y: hidden;
   transition: height 0.5s linear;
 }
@@ -254,45 +258,58 @@ div.card div.consensus.tight div.outer_ring {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 4px;
   background-color: #081c22;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
 }
-
-span#procent {
-  display: block;
+div.outer_ring .circle {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+div.outer_ring .circle .box,
+div.outer_ring .circle .box span {
   position: absolute;
-  left: 50%;
   top: 50%;
-  font-size: 0.7em;
-  transform: translate(-50%, -50%);
+  left: 50%;
   color: #fff;
+}
+div.outer_ring .circle .box {
+  width: 100%;
+  height: 100%;
+  /*background-color: #081c22;
+  */
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+div.outer_ring .circle .bar {
+  transform: translate(-1%, -1%);
+  -webkit-transform: translate(-1%, -1%);
+  -moz-transform: translate(-1%, -1%);
+  -ms-transform: translate(-1%, -1%);
+  -o-transform: translate(-1%, -1%);
 }
 
-span#procent::after {
-  content: "%";
-}
-.canvas-wrap {
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: inline-block;
-  width: 35px;
-  height: 35px;
-}
-#canvas {
-  position: absolute;
-  top: 54%;
-  left: 53%;
-  width: 67px;
-  height: 67px;
+div.outer_ring .circle .box span {
+  font-size: 12px;
+  font-weight: 600;
+  background-color: #fff;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
@@ -301,7 +318,7 @@ span#procent::after {
 }
 
 div.media.discover div.card.style_1 div.content h2 {
-  font-size: 1em;
+  font-size: 0.9em;
   margin: 0;
   width: 100%;
   overflow-wrap: break-word;
@@ -309,6 +326,9 @@ div.media.discover div.card.style_1 div.content h2 {
 div.media.discover div.card.style_1 div.content a {
   font-weight: 700;
   color: #000;
+}
+div.media.discover div.card.style_1 div.content a:hover {
+  color: blue;
 }
 div.media.discover div.card.style_1 div.content p {
   font-size: 0.9em;
@@ -319,4 +339,14 @@ div.media.discover div.card.style_1 div.content p {
 section.inner_content div.column_content div.card + div.card {
   margin-left: 20px;
   margin-top: 0;
+}
+section.inner_content div.column_content.flex.scroller::-webkit-scrollbar {
+  height: 8px;
+  width: 100px;
+  border-radius: 12px;
+  background: #ccc;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
 }
