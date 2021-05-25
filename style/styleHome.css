@@ -7,6 +7,10 @@ html {
   --taw2020Purple: 164, 164, 214;
   --taw2020Yellow: 232, 230, 192;
   --taw2020Orange: 232, 218, 192;
+  --tmdbLightBlue: 1, 180, 228;
+  --tmdbLighterGreen: 192, 254, 207;
+  --tmdbLightGreen: 30, 213, 169;
+  --tmdbLogoGreen: 144, 206, 161;
   --taw2020Teal: 164, 212, 214;
 }
 * {
@@ -262,7 +266,19 @@ section.inner_content .media {
   align-items: flex-start;
   align-content: flex-start;
 }
-.column_wrapper .content_wrapper {
+.new_index .column_wrapper .content_wrapper {
+  max-width: var(--maxPrimaryPageWidth);
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  align-content: flex-start;
+  flex-direction: column;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.no_pad .column_wrapper .content_wrapper {
   max-width: var(--maxPrimaryPageWidth);
   width: 100%;
   display: flex;

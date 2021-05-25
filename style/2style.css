@@ -118,7 +118,6 @@ section.inner_content.no_pad
   > div:first-child {
   margin-left: 40px;
 }
-
 section.inner_content div.column_content div.card.style_1 {
   width: 150px;
   min-width: 150px;
@@ -342,11 +341,25 @@ section.inner_content div.column_content div.card + div.card {
 }
 section.inner_content div.column_content.flex.scroller::-webkit-scrollbar {
   height: 8px;
-  width: 100px;
-  border-radius: 12px;
-  background: #ccc;
-  -webkit-border-radius: 12px;
-  -moz-border-radius: 12px;
-  -ms-border-radius: 12px;
-  -o-border-radius: 12px;
+  width: 8px;
+}
+div.scroller::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+section.inner_content
+  div.column_content.flex.scroller::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 20px;
+}
+div.scroller::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 20px;
+}
+section.inner_content
+  div.column_content.flex.scroller::-webkit-scrollbar-track {
+  background: transparent;
+}
+div.scroller::-webkit-scrollbar-track {
+  background: transparent;
 }
