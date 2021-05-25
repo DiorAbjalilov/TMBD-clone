@@ -71,8 +71,6 @@ $(".p85 .bar").circleProgress({
   value: 0.85,
 });
 
-//
-// section.inner_content div.column_content div.card.style_2 div.image
 let imgTreler = document.querySelectorAll(".style_2 .image .wrapper");
 for (let j = 0; j < imgTreler.length; j++) {
   imgTreler[j].addEventListener("mouseover", (e) => {
