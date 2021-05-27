@@ -117,3 +117,14 @@ for (let j = 0; j < imgTreler.length; j++) {
     backgImg.style.backgroundImage = "url(" + urlStr + ")";
   });
 }
+
+let hederMenu = document.querySelector(".hederMenu");
+window.addEventListener("scroll", (e) => {
+  const scrol = window.scrollY;
+  if (scrol >= 90) {
+    hederMenu.style.top = "-100px";
+    hederMenu.style.transition = "0.4s";
+  } else if (scrol <= 150) {
+    hederMenu.style.top = "0px";
+  }
+});
