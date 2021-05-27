@@ -296,11 +296,11 @@ div.outer_ring .circle .box {
   -o-border-radius: 50%;
 }
 div.outer_ring .circle .bar {
-  transform: translate(-1%, -1%);
-  -webkit-transform: translate(-1%, -1%);
-  -moz-transform: translate(-1%, -1%);
-  -ms-transform: translate(-1%, -1%);
-  -o-transform: translate(-1%, -1%);
+  transform: translate(-2%, 1%);
+  -webkit-transform: translate(-2%, 1%);
+  -moz-transform: translate(-2%, 1%);
+  -ms-transform: translate(-2%, 1%);
+  -o-transform: translate(-2%, 1%);
 }
 
 div.outer_ring .circle .box span {

@@ -33,6 +33,7 @@ let backg = document.querySelector(".background");
 let aBtn = document.querySelectorAll(".selector .anchor");
 for (let i = 0; i < aBtn.length; i++) {
   aBtn[i].addEventListener("click", (e) => {
+    e.preventDefault();
     if (i == 0) {
       aBtn[1].classList.remove("selected");
       aBtn[i].classList.add("selected");
@@ -43,6 +44,24 @@ for (let i = 0; i < aBtn.length; i++) {
       backg.style.width = "127px";
       aBtn[i].classList.add("selected");
       aBtn[0].classList.remove("selected");
+    }
+  });
+}
+let backg3 = document.querySelectorAll(".background")[2];
+let aBtn3 = document.querySelectorAll(".trending .selector .anchor");
+for (let i = 0; i < aBtn3.length; i++) {
+  aBtn3[i].addEventListener("click", (e) => {
+    e.preventDefault();
+    if (i == 0) {
+      aBtn3[1].classList.remove("selected");
+      aBtn3[i].classList.add("selected");
+      backg3.style.left = "0px";
+      backg3.style.width = "100%";
+    } else if (i == 1) {
+      backg3.style.left = "85px";
+      backg3.style.width = "120px";
+      aBtn3[i].classList.add("selected");
+      aBtn3[0].classList.remove("selected");
     }
   });
 }
@@ -69,6 +88,22 @@ $(".p82 .bar").circleProgress({
 });
 $(".p85 .bar").circleProgress({
   value: 0.85,
+});
+$(".p80 .bar").circleProgress({
+  value: 0.8,
+});
+$(".p84 .bar").circleProgress({
+  value: 0.84,
+});
+$(".p79 .bar").circleProgress({
+  value: 0.79,
+});
+$(".p73 .bar").circleProgress({
+  value: 0.73,
+});
+$(".p67 .bar").circleProgress({
+  value: 0.67,
+  fill: { color: "#c8ca2e" },
 });
 
 let imgTreler = document.querySelectorAll(".style_2 .image .wrapper");
