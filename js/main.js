@@ -124,7 +124,7 @@ window.addEventListener("scroll", (e) => {
   if (scrol >= 90) {
     hederMenu.style.top = "-100px";
     hederMenu.style.transition = "0.4s";
-  } else if (scrol <= 150) {
+  } else if (scrol <= 180) {
     hederMenu.style.top = "0px";
   }
 });

@@ -227,7 +227,6 @@ main {
   justify-content: center;
   background-color: #fff;
   margin-top: 64px;
-  border: 1px solid black;
 }
 section.new_index {
   background-image: url("../imgs/backImg/background1.jpg");
