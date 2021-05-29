@@ -128,3 +128,7 @@ window.addEventListener("scroll", (e) => {
     hederMenu.style.top = "0px";
   }
 });
+
+window.addEventListener("load", () => {
+  console.log(Math.random() * 10);
+});
