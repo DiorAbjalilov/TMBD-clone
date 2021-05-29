@@ -530,48 +530,48 @@ const trenDefault = [
 const trenNew = [
   {
     img_url: "../imgs/popularImgs/newimg/trennew.jpg",
-    text: "F9",
-    title: "May 19, 2021",
+    text: "Zack Snyder's Justice League",
+    title: "Mar 18, 2021",
   },
   {
     img_url: "../imgs/popularImgs/newimg/trennew1.jpg",
-    text: "Friends",
-    title: "Sep 22, 1994",
+    text: "Love, Death & Robots",
+    title: "Mar 15, 2019",
   },
   {
     img_url: "../imgs/popularImgs/newimg/trennew2.jpg",
-    text: "Wrath of Man",
-    title: "Apr 22, 2021",
+    text: "Tom & Jerry",
+    title: "Feb 11, 2021",
   },
   {
     img_url: "../imgs/popularImgs/newimg/trennew3.jpg",
-    text: "The Unholy",
-    title: "Mar 31, 2021",
-  },
-  {
-    img_url: "../imgs/popularImgs/newimg/trennew4.jpg",
-    text: "F9",
+    text: "The Mitchells vs. The Machines",
     title: "Apr 22, 2021",
   },
   {
+    img_url: "../imgs/popularImgs/newimg/trennew4.jpg",
+    text: "The Bad Batch",
+    title: "May 04, 2021",
+  },
+  {
     img_url: "../imgs/popularImgs/newimg/trennew5.jpg",
-    text: "Army of the Dead",
-    title: "May 14, 2021",
+    text: "Tom Clancy's Without Remorse",
+    title: "Apr 29, 2021",
   },
   {
     img_url: "../imgs/popularImgs/newimg/trennew6.jpg",
-    text: "Friends: The Reunion",
-    title: "May 27, 2021",
+    text: "Raya and the Last Dragon",
+    title: "Mar 03, 2021",
   },
   {
     img_url: "../imgs/popularImgs/newimg/trennew7.jpg",
-    text: "Godzilla vs. Kong",
-    title: "Mar 24, 2021",
+    text: "Oxygen",
+    title: "May 12, 2021",
   },
   {
     img_url: "../imgs/popularImgs/newimg/trennew8.jpg",
-    text: "Cruella",
-    title: "May 26, 2021",
+    text: "The Woman in the Window",
+    title: "May 14, 2021",
   },
   {
     img_url: "../imgs/popularImgs/newimg/trennew9.jpg",
