@@ -178,108 +178,157 @@ const arrImg = [
   {
     id: 0,
     img_url: "../imgs/inFilimIMg/infilim.jpg",
+    text: "Mortal Kombat",
+    title: "Apr 23, 2021",
   },
   {
     id: 1,
     img_url: "../imgs/inFilimIMg/infilim1.jpg",
+    text: "Those Who Wish Me Deadt",
+    title: "May 14, 2021",
   },
   {
     id: 2,
     img_url: "../imgs/inFilimIMg/infilim2.jpg",
+    text: "Cruella",
+    title: "May 28, 2021",
   },
   {
     id: 3,
     img_url: "../imgs/inFilimIMg/infilim3.jpg",
+    text: "Demon Slayer -Kimetsu no Yaiba- The Movie: Mugen Train",
+    title: "Apr 23, 2021",
   },
   {
     id: 4,
     img_url: "../imgs/inFilimIMg/infilim4.jpg",
+    text: "Wrath of Man",
+    title: "May 07, 2021",
   },
   {
     id: 5,
     img_url: "../imgs/inFilimIMg/infilim5.jpg",
+    text: "Benny Loves You",
+    title: "May 07, 2021",
   },
   {
     id: 6,
     img_url: "../imgs/inFilimIMg/infilim6.jpg",
+    text: "A Quiet Place Part II",
+    title: "May 28, 2021",
   },
   {
     id: 7,
     img_url: "../imgs/inFilimIMg/infilim7.jpg",
+    text: "Spiral: From the Book of Saw",
+    title: "May 14, 2021",
   },
   {
     id: 8,
     img_url: "../imgs/inFilimIMg/infilim8.jpg",
+    text: "Endangered Species",
+    title: "May 28, 2021",
   },
   {
     id: 9,
     img_url: "../imgs/inFilimIMg/infilim9.jpg",
+    text: "New Order",
+    title: "May 21, 2021",
   },
   {
     id: 10,
     img_url: "../imgs/inFilimIMg/infilim10.jpg",
+    text: "Riders of Justice",
+    title: "May 21, 2021",
   },
 ];
 const arrImgDefault = [
   {
     id: 0,
     img_url: "../imgs/filmImg/photoFilm.jpg",
+    text: "The Flash",
+    title: "Oct 07, 2014",
   },
   {
     id: 1,
     img_url: "../imgs/filmImg/photoFilm1.jpg",
+    text: "The Good Doctor",
+    title: "Sep 25, 2017",
   },
   {
     id: 2,
     img_url: "../imgs/filmImg/photoFilm2.jpg",
+    text: "Grey's Anatomy",
+    title: "Mar 27, 2005",
   },
   {
     id: 3,
     img_url: "../imgs/filmImg/photoFilm3.jpg",
+    text: "Superman & Lois",
+    title: "Feb 23, 2021",
   },
   {
     id: 4,
     img_url: "../imgs/filmImg/photoFilm.jpg",
+    text: "The Flash",
+    title: "Oct 07, 2014",
   },
   {
     id: 5,
     img_url: "../imgs/filmImg/photoFilm1.jpg",
+    text: "The Good Doctor",
+    title: "Sep 25, 2017",
   },
   {
     id: 6,
     img_url: "../imgs/filmImg/photoFilm2.jpg",
+    text: "Grey's Anatomy",
+    title: "Mar 27, 2005",
   },
   {
     id: 7,
     img_url: "../imgs/filmImg/photoFilm3.jpg",
+    text: "Superman & Lois",
+    title: "Feb 23, 2021",
   },
   {
     id: 8,
     img_url: "../imgs/filmImg/photoFilm.jpg",
+    text: "The Flash",
+    title: "Oct 07, 2014",
   },
   {
     id: 9,
     img_url: "../imgs/filmImg/photoFilm1.jpg",
+    text: "The Good Doctor",
+    title: "Sep 25, 2017",
   },
   {
     id: 10,
     img_url: "../imgs/filmImg/photoFilm2.jpg",
+    text: "Grey's Anatomy",
+    title: "Mar 27, 2005",
   },
 ];
 let clcikData1 = document.querySelector(".no_pad .selector_wrap #cilick");
-// console.log(clcikData1);
 let popularImg = document.querySelectorAll(".popular .image img");
+let popularText = document.querySelectorAll(".popular .content h2");
+let popularTitle = document.querySelectorAll(".popular .content p");
 
 let bool = { is: true };
 clcikData1.addEventListener("click", () => {
   if (bool.is) {
     for (let i = 0; i < popularImg.length; i++) {
       popularImg[i].src = arrImg[i].img_url;
+      popularText[i].innerHTML = arrImg[i].text;
+      popularTitle[i].innerHTML = arrImg[i].title;
     }
     bool.is = false;
   } else {
     for (let i = 0; i < popularImg.length; i++) {
       popularImg[i].src = arrImgDefault[i].img_url;
+      popularText[i].innerHTML = arrImgDefault[i].text;
+      popularTitle[i].innerHTML = arrImgDefault[i].title;
     }
     bool.is = true;
   }
