@@ -130,7 +130,7 @@ window.addEventListener("scroll", (e) => {
 });
 
 // data img
-const data = [
+const dataBaner = [
   {
     img_url: "../imgs/imgRand/imgRand.jpg",
   },
@@ -167,7 +167,7 @@ let bannerImg = document.querySelector("section.new_index");
 
 window.addEventListener("load", () => {
   let rand = Math.floor(Math.random() * 10);
-  let imgs = data[rand].img_url;
+  let imgs = dataBaner[rand].img_url;
   bannerImg.style.backgroundImage =
     "linear-gradient(to right, rgba(var(--tmdbDarkBlue), 0.8) 0%, rgba(var(--tmdbDarkBlue), 0) 100%), url(" +
     imgs +
@@ -314,7 +314,6 @@ let clcikData1 = document.querySelector(".no_pad .selector_wrap #cilick");
 let popularImg = document.querySelectorAll(".popular .image img");
 let popularText = document.querySelectorAll(".popular .content h2");
 let popularTitle = document.querySelectorAll(".popular .content p");
-
 let bool = { is: true };
 clcikData1.addEventListener("click", () => {
   if (bool.is) {
@@ -329,6 +328,278 @@ clcikData1.addEventListener("click", () => {
       popularImg[i].src = arrImgDefault[i].img_url;
       popularText[i].innerHTML = arrImgDefault[i].text;
       popularTitle[i].innerHTML = arrImgDefault[i].title;
+    }
+    bool.is = true;
+  }
+});
+
+// trelling img
+const BannerImgDefault = [
+  {
+    id: 1,
+    img_url: "../imgs/trelImg/filimtr.jpg",
+    text: "Lucifer",
+    title: "Lucifer Season 5 Part 2 | Official Trailer | Netflix",
+  },
+  {
+    id: 0,
+    img_url: "../imgs/trelImg/filimtr0.jpg",
+    text: "The Flash",
+    title: "The Flash | Season 7 Episode 9 | Timeless Promo | The CW",
+  },
+  {
+    id: 2,
+    img_url: "../imgs/trelImg/filimtr1.jpg",
+    text: "The Good Doctor",
+    title: "Sep 25, 2017",
+  },
+  {
+    id: 3,
+    img_url: "../imgs/trelImg/filimtr2.jpg",
+    text: "High School Musical: The Musical: The Series",
+    title:
+      "High School Musical: The Musical: The Series Season 2 | Official Trailer | Disney+",
+  },
+  {
+    id: 4,
+    img_url: "../imgs/trelImg/filimtr3.jpg",
+    text: "You Knock on My Door",
+    title: "Sen Çal Kapımı 33. Bölüm 1. Fragmanı",
+  },
+  {
+    id: 5,
+    img_url: "../imgs/trelImg/filimtr4.jpg",
+    text: "The Bad Batch",
+    title: "Star Wars: The Bad Batch | Official Trailer | Disney+",
+  },
+  {
+    id: 6,
+    img_url: "../imgs/trelImg/filimtr5.jpg",
+    text: "Superman & Lois",
+    title:
+      "Superman & Lois | Season 1 Episode 5 | The Best of Smallville Promo",
+  },
+  {
+    id: 7,
+    img_url: "../imgs/trelImg/filimtr6.jpg",
+    text: "The Flash",
+    title: "The Flash | Season 7 Episode 9 | Timeless Promo | The CW",
+  },
+  {
+    id: 8,
+    img_url: "../imgs/trelImg/filimtr7.jpg",
+    text: "The Flash",
+    title: "The Flash | Season 7 Episode 9 | Timeless Promo | The CW",
+  },
+];
+const BannerImgNew = [
+  {
+    id: 0,
+    img_url: "../imgs/inFilimTr/inFilimT.jpg",
+    text: "Cruella",
+    title: "The Beginning",
+  },
+  {
+    id: 1,
+    img_url: "../imgs/inFilimTr/inFilimT1.jpg",
+    text: "Feral State",
+    title: "Feral State | Official Trailer (HD) | Vertical Entertainment",
+  },
+  {
+    id: 2,
+    img_url: "../imgs/inFilimTr/inFilimT2.jpg",
+    text: "Riders of Justice",
+    title: "Riders of Justice - Official Trailer",
+  },
+  {
+    id: 3,
+    img_url: "../imgs/inFilimTr/inFilimT3.jpg",
+    text: "Benny Loves You",
+    title: "Benny Loves You (2021) Official Trailer",
+  },
+  {
+    id: 4,
+    img_url: "../imgs/inFilimTr/inFilimT4.jpg",
+    text: "Endangered Species",
+    title:
+      "Endangered Species (2021 Movie) Official Trailer – Rebecca Romijn, Jerry O'Connell",
+  },
+  {
+    id: 5,
+    img_url: "../imgs/inFilimTr/inFilimT5.jpg",
+    text: "Those Who Wish Me Dead",
+    title: "Those Who Wish Me Dead - Official Trailer",
+  },
+  {
+    id: 6,
+    img_url: "../imgs/inFilimTr/inFilimT6.jpg",
+    text: "Spiral: From the Book of Saw",
+    title:
+      "Spiral: From the Book of Saw (2021 Movie) Official Trailer – Chris Rock, Samuel L. Jackson",
+  },
+  {
+    id: 7,
+    img_url: "../imgs/inFilimTr/inFilimT7.jpg",
+    text: "Wrath of Man",
+    title: "Official Trailer",
+  },
+  {
+    id: 8,
+    img_url: "../imgs/inFilimTr/inFilimT8.jpg",
+    text: "In the Earth",
+    title: "IN THE EARTH - Official Trailer - In Theaters April 23",
+  },
+];
+
+let clcikData2 = document.querySelector(".video .selector");
+let trelingImg = document.querySelectorAll(".video .card.video a img");
+let trelingText = document.querySelectorAll(".video .card.video .content h2 a");
+let trelingTitle = document.querySelectorAll(".video .card.video .content h3");
+//
+clcikData2.addEventListener("click", () => {
+  if (bool.is) {
+    for (let i = 0; i < trelingImg.length; i++) {
+      trelingImg[i].src = BannerImgNew[i].img_url;
+      trelingText[i].innerHTML = BannerImgNew[i].text;
+      trelingTitle[i].innerHTML = BannerImgNew[i].title;
+    }
+    bool.is = false;
+  } else {
+    for (let i = 0; i < trelingImg.length; i++) {
+      trelingImg[i].src = BannerImgDefault[i].img_url;
+      trelingText[i].innerHTML = BannerImgDefault[i].text;
+      trelingTitle[i].innerHTML = BannerImgDefault[i].title;
+    }
+    bool.is = true;
+  }
+});
+
+// terlier filim handler
+const trenDefault = [
+  {
+    img_url: "../imgs/popularImgs/popular.jpg",
+    text: "F9",
+    title: "May 19, 2021",
+  },
+  {
+    img_url: "../imgs/popularImgs/popular1.jpg",
+    text: "Friends",
+    title: "Sep 22, 1994",
+  },
+  {
+    img_url: "../imgs/popularImgs/popular2.jpg",
+    text: "Wrath of Man",
+    title: "Apr 22, 2021",
+  },
+  {
+    img_url: "../imgs/popularImgs/popular3.jpg",
+    text: "The Unholy",
+    title: "Mar 31, 2021",
+  },
+  {
+    img_url: "../imgs/popularImgs/popular.jpg",
+    text: "F9",
+    title: "Apr 22, 2021",
+  },
+  {
+    img_url: "../imgs/popularImgs/popular5.jpg",
+    text: "Army of the Dead",
+    title: "May 14, 2021",
+  },
+  {
+    img_url: "../imgs/popularImgs/popular6.jpg",
+    text: "Friends: The Reunion",
+    title: "May 27, 2021",
+  },
+  {
+    img_url: "../imgs/popularImgs/popular7.jpg",
+    text: "Godzilla vs. Kong",
+    title: "Mar 24, 2021",
+  },
+  {
+    img_url: "../imgs/popularImgs/popular3.jpg",
+    text: "Cruella",
+    title: "May 26, 2021",
+  },
+  {
+    img_url: "../imgs/popularImgs/popular1.jpg",
+    text: "F9",
+    title: "May 19, 2021",
+  },
+];
+const trenNew = [
+  {
+    img_url: "../imgs/popularImgs/newimg/trennew.jpg",
+    text: "F9",
+    title: "May 19, 2021",
+  },
+  {
+    img_url: "../imgs/popularImgs/newimg/trennew1.jpg",
+    text: "Friends",
+    title: "Sep 22, 1994",
+  },
+  {
+    img_url: "../imgs/popularImgs/newimg/trennew2.jpg",
+    text: "Wrath of Man",
+    title: "Apr 22, 2021",
+  },
+  {
+    img_url: "../imgs/popularImgs/newimg/trennew3.jpg",
+    text: "The Unholy",
+    title: "Mar 31, 2021",
+  },
+  {
+    img_url: "../imgs/popularImgs/newimg/trennew4.jpg",
+    text: "F9",
+    title: "Apr 22, 2021",
+  },
+  {
+    img_url: "../imgs/popularImgs/newimg/trennew5.jpg",
+    text: "Army of the Dead",
+    title: "May 14, 2021",
+  },
+  {
+    img_url: "../imgs/popularImgs/newimg/trennew6.jpg",
+    text: "Friends: The Reunion",
+    title: "May 27, 2021",
+  },
+  {
+    img_url: "../imgs/popularImgs/newimg/trennew7.jpg",
+    text: "Godzilla vs. Kong",
+    title: "Mar 24, 2021",
+  },
+  {
+    img_url: "../imgs/popularImgs/newimg/trennew8.jpg",
+    text: "Cruella",
+    title: "May 26, 2021",
+  },
+  {
+    img_url: "../imgs/popularImgs/newimg/trennew9.jpg",
+    text: "F9",
+    title: "May 19, 2021",
+  },
+];
+//
+let clcikData3 = document.querySelector(
+  "section.trending .selector_wrap .selector"
+);
+let trenImg = document.querySelectorAll(".trending .image img");
+let trenText = document.querySelectorAll(".trending .content h2 a");
+let trenTitle = document.querySelectorAll(".trending .content p");
+//
+clcikData3.addEventListener("click", () => {
+  if (bool.is) {
+    for (let i = 0; i < trenImg.length; i++) {
+      trenImg[i].src = trenNew[i].img_url;
+      trenText[i].innerHTML = trenNew[i].text;
+      trenTitle[i].innerHTML = trenNew[i].title;
+    }
+    bool.is = false;
+  } else {
+    for (let i = 0; i < trenImg.length; i++) {
+      trenImg[i].src = trenDefault[i].img_url;
+      trenText[i].innerHTML = trenDefault[i].text;
+      trenTitle[i].innerHTML = trenDefault[i].title;
     }
     bool.is = true;
   }
