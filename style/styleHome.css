@@ -229,9 +229,6 @@ main {
   margin-top: 64px;
 }
 section.new_index {
-  /* background-image: url("../imgs/backImg/background1.jpg"); */
-}
-section.new_index {
   min-height: 300px;
   height: calc(100vh / 2.5);
   max-height: 360px;

@@ -132,43 +132,33 @@ window.addEventListener("scroll", (e) => {
 // data img
 const data = [
   {
-    id: 1,
     img_url: "../imgs/imgRand/imgRand.jpg",
   },
   {
-    id: 2,
     img_url: "../imgs/imgRand/imgRand1.jpg",
   },
   {
-    id: 3,
     img_url: "../imgs/imgRand/imgRand2.jpg",
   },
   {
-    id: 4,
     img_url: "../imgs/imgRand/imgRand3.jpg",
   },
   {
-    id: 5,
     img_url: "../imgs/imgRand/imgRand4.jpg",
   },
   {
-    id: 6,
     img_url: "../imgs/imgRand/imgRand5.jpg",
   },
   {
-    id: 7,
     img_url: "../imgs/imgRand/imgRand6.jpg",
   },
   {
-    id: 8,
     img_url: "../imgs/imgRand/imgRand7.jpg",
   },
   {
-    id: 9,
     img_url: "../imgs/imgRand/imgRand8.jpg",
   },
   {
-    id: 10,
     img_url: "../imgs/imgRand/imgRand9.jpg",
   },
 ];
@@ -178,5 +168,119 @@ let bannerImg = document.querySelector("section.new_index");
 window.addEventListener("load", () => {
   let rand = Math.floor(Math.random() * 10);
   let imgs = data[rand].img_url;
-  bannerImg.style.backgroundImage = "url(" + imgs + ")";
+  bannerImg.style.backgroundImage =
+    "linear-gradient(to right, rgba(var(--tmdbDarkBlue), 0.8) 0%, rgba(var(--tmdbDarkBlue), 0) 100%), url(" +
+    imgs +
+    ")";
+});
+
+const arrImg = [
+  {
+    id: 0,
+    img_url: "../imgs/inFilimIMg/infilim.jpg",
+  },
+  {
+    id: 1,
+    img_url: "../imgs/inFilimIMg/infilim1.jpg",
+  },
+  {
+    id: 2,
+    img_url: "../imgs/inFilimIMg/infilim2.jpg",
+  },
+  {
+    id: 3,
+    img_url: "../imgs/inFilimIMg/infilim3.jpg",
+  },
+  {
+    id: 4,
+    img_url: "../imgs/inFilimIMg/infilim4.jpg",
+  },
+  {
+    id: 5,
+    img_url: "../imgs/inFilimIMg/infilim5.jpg",
+  },
+  {
+    id: 6,
+    img_url: "../imgs/inFilimIMg/infilim6.jpg",
+  },
+  {
+    id: 7,
+    img_url: "../imgs/inFilimIMg/infilim7.jpg",
+  },
+  {
+    id: 8,
+    img_url: "../imgs/inFilimIMg/infilim8.jpg",
+  },
+  {
+    id: 9,
+    img_url: "../imgs/inFilimIMg/infilim9.jpg",
+  },
+  {
+    id: 10,
+    img_url: "../imgs/inFilimIMg/infilim10.jpg",
+  },
+];
+const arrImgDefault = [
+  {
+    id: 0,
+    img_url: "../imgs/filmImg/photoFilm.jpg",
+  },
+  {
+    id: 1,
+    img_url: "../imgs/filmImg/photoFilm1.jpg",
+  },
+  {
+    id: 2,
+    img_url: "../imgs/filmImg/photoFilm2.jpg",
+  },
+  {
+    id: 3,
+    img_url: "../imgs/filmImg/photoFilm3.jpg",
+  },
+  {
+    id: 4,
+    img_url: "../imgs/filmImg/photoFilm.jpg",
+  },
+  {
+    id: 5,
+    img_url: "../imgs/filmImg/photoFilm1.jpg",
+  },
+  {
+    id: 6,
+    img_url: "../imgs/filmImg/photoFilm2.jpg",
+  },
+  {
+    id: 7,
+    img_url: "../imgs/filmImg/photoFilm3.jpg",
+  },
+  {
+    id: 8,
+    img_url: "../imgs/filmImg/photoFilm.jpg",
+  },
+  {
+    id: 9,
+    img_url: "../imgs/filmImg/photoFilm1.jpg",
+  },
+  {
+    id: 10,
+    img_url: "../imgs/filmImg/photoFilm2.jpg",
+  },
+];
+let clcikData1 = document.querySelector(".no_pad .selector_wrap #cilick");
+// console.log(clcikData1);
+let popularImg = document.querySelectorAll(".popular .image img");
+
+let bool = { is: true };
+clcikData1.addEventListener("click", () => {
+  if (bool.is) {
+    for (let i = 0; i < popularImg.length; i++) {
+      popularImg[i].src = arrImg[i].img_url;
+    }
+    bool.is = false;
+  } else {
+    for (let i = 0; i < popularImg.length; i++) {
+      popularImg[i].src = arrImgDefault[i].img_url;
+    }
+    bool.is = true;
+  }
 });
