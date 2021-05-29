@@ -1,0 +1,27 @@
+.inputSearch {
+  position: fixed;
+  top: 65px;
+  display: none;
+  left: 0;
+  z-index: 15;
+  width: 100%;
+}
+.inputSearch input {
+  width: 100%;
+  padding: 15px 70px;
+  font-size: 17px;
+  font-style: italic;
+  border: none;
+  outline: none;
+}
+.inputSearch i {
+  position: absolute;
+  font-size: 15px;
+  top: 50%;
+  left: 3%;
+  transform: translate(2%, -50%);
+  -webkit-transform: translate(2%, -50%);
+  -moz-transform: translate(2%, -50%);
+  -ms-transform: translate(2%, -50%);
+  -o-transform: translate(2%, -50%);
+}
