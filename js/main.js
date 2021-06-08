@@ -68,19 +68,6 @@ for (let i = 0; i < aBtn3.length; i++) {
   });
 }
 
-
-let imgTreler = document.querySelectorAll(".style_2 .image .wrapper");
-for (let j = 0; j < imgTreler.length; j++) {
-  imgTreler[j].addEventListener("mouseover", (e) => {
-    let classLis = e.target.parentElement.classList[1];
-    let aa = String("." + e.target.parentElement.classList[1] + " " + "img");
-    let urlImg = document.querySelectorAll(aa);
-    let urlStr = String(urlImg[j].src);
-    let backgImg = document.querySelector(".bg_image.video");
-    backgImg.style.backgroundImage = "url(" + urlStr + ")";
-  });
-}
-
 let hederMenu = document.querySelector(".hederMenu");
 window.addEventListener("scroll", (e) => {
   const scrol = window.scrollY;

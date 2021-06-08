@@ -1,34 +1,38 @@
 const apiKey = "db625edffe159ea93eb6c0e7d83d7089";
+let divCards=document.querySelector('.video  .column_content.flex.scroller.loaded');
+let backgrTralImg=document.querySelector('.inner_content.bg_image.no_pad.video');
 let divBlock = document.querySelector(".column_content.flex.scroller.loaded");
 let options = {
   startAngle: -1.55,
   size: 35,
-  // value: 0.77,
   fill: { color: "#21d07a" },
 };
-      let url=`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=1`
+
+let url=`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=1`
 
 fetch(url)
   .then((res) => res.json())
   .then((movies) => {
     let { results } = movies;
     results.forEach((item) => {
-      let { poster_path, title, original_title, release_date, vote_average } =
+        // console.log(item);
+      let { poster_path, title, original_title, release_date, vote_average, backdrop_path } =
         item;
-      Movies.getMovieImg(
-        poster_path,
-        title,
-        original_title,
-        release_date,
-        vote_average
-      );
+        Movies.getMovieImg(
+            poster_path,
+            title,
+            original_title,
+            release_date,
+            vote_average,
+            backdrop_path
+            );
     });
   })
   .catch(function (err) {
     console.log(err, "error");
   });
 class Movies {
-  static getMovieImg(img_id, title, name, dataName, vote_average) {
+  static getMovieImg(img_id, title, name, dataName, vote_average, backdrop_path) {
     fetch(`https://image.tmdb.org/t/p/w500${img_id}`)
       .then((res) => res)
       .then((imges) => {
@@ -70,6 +74,7 @@ class Movies {
                         `;
         // console.log(divContent);
         this.getProgres(vote_average);
+        this.getMovieTrales(backdrop_path, name, title)
       })
       .catch((err) => {
         console.log(err, "error comunt");
@@ -88,66 +93,57 @@ class Movies {
       value: (vote_average / 10).toFixed(2),
     });
   }
+  static getMovieTrales(backdrop_path, name, title){
+    fetch(`https://image.tmdb.org/t/p/w500${backdrop_path}`)
+    .then((res) => res)
+    .then((imges) => {
+      let { url } = imges;
+    //   console.log(url);
+      let divCardsTral=document.createElement('div');
+      let divImageTral=document.createElement('div');
+      let divContenTral=document.createElement('div');
+      divCardsTral.className='card video style_2 true';
+      divImageTral.className='image';
+      divContenTral.className='content';
+      divCards.appendChild(divCardsTral)
+      divCardsTral.appendChild(divImageTral);
+      divCardsTral.appendChild(divContenTral);
+      divImageTral.innerHTML=`
+        <div class="wrapper">
+            <a href="#" class="image play_trailer">
+                <img src="${url}" alt="">
+                <div class="play">
+                    <span class="glyphicons_v2 play invert svg"></span>
+                </div>
+            </a>
+        </div>
+        <div class="options">
+            <a href="#" class="no_click">
+                <div class="glyphicons_v2 circle-more white"></div>
+            </a>
+        </div>
+      `;
+      divContenTral.innerHTML=`
+        <h2>
+            <a href="#">${name}</a>
+        </h2>
+        <h3>
+            ${title}
+        </h3>
+      `
+      let imgTreler = document.querySelectorAll(".style_2 .image .wrapper");
+      for (let j = 0; j < imgTreler.length; j++) {
+        imgTreler[j].addEventListener("mouseover", (e) => {
+          let aa = String("." + e.target.parentElement.classList[1] + " " + "img");
+          let urlImg = document.querySelectorAll(aa);
+          let urlStr = String(urlImg[j].src);
+          let backgImg = document.querySelector(".bg_image.video");
+          backgImg.style.backgroundImage = "url(" + urlStr + ")";
+        });
+      }
+      backgrTralImg.style.backgroundImage=`url(${url})`
+  }).catch((err)=>{
+      console.log(err, 'error');
+  })
 }
-// console.log(divBlock);
-// aBtn = document.querySelectorAll(".popular .selector .anchor");
-// let urlObj = { is: true };
-// for (let i = 0; i < aBtn.length; i++) {
-//   aBtn[i].addEventListener("click", () => {
-//     if (urlObj.is) {
-//       let url = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=1`;
-//       fetch(url)
-//         .then((res) => res.json())
-//         .then((movies) => {
-//           let { results } = movies;
-//           results.forEach((item) => {
-//             let {
-//               poster_path,
-//               title,
-//               original_title,
-//               release_date,
-//               vote_average,
-//             } = item;
-//             Movies.getMovieImg(
-//               poster_path,
-//               title,
-//               original_title,
-//               release_date,
-//               vote_average
-//             );
-//           });
-//         })
-//         .catch(function (err) {
-//           console.log(err, "error");
-//         });
-//       urlObj.is = false;
-//     } else {
-//       fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=2`)
-//         .then((res) => res.json())
-//         .then((movies) => {
-//           let { results } = movies;
-//           results.forEach((item) => {
-//             let {
-//               poster_path,
-//               title,
-//               original_title,
-//               release_date,
-//               vote_average,
-//             } = item;
-//             Movies.getMovieImg(
-//               poster_path,
-//               title,
-//               original_title,
-//               release_date,
-//               vote_average
-//             );
-//           });
-//         })
-//         .catch(function (err) {
-//           console.log(err, "error");
-//         });
-//       urlObj.is = true;
-//     }
-//     console.log(urlObj.is);
-//   });
-// }
+}
