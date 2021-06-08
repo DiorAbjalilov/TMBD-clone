@@ -37,12 +37,14 @@ for (let i = 0; i < aBtn.length; i++) {
     if (i == 0) {
       aBtn[1].classList.remove("selected");
       aBtn[i].classList.add("selected");
+      aBtn[i].id=1;
       backg.style.left = "0px";
       backg.style.width = "100%";
     } else if (i == 1) {
       backg.style.left = "85px";
       backg.style.width = "127px";
       aBtn[i].classList.add("selected");
+      aBtn[i].id=2;
       aBtn[0].classList.remove("selected");
     }
   });
