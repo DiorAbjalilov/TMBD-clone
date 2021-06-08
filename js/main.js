@@ -66,45 +66,6 @@ for (let i = 0; i < aBtn3.length; i++) {
   });
 }
 
-let options = {
-  startAngle: -1.55,
-  size: 35,
-  value: 0.77,
-  fill: { color: "#21d07a" },
-};
-$(".circle .bar")
-  .circleProgress(options)
-  .on("circle-animation-progress", function (event, progress, stepValue) {
-    $(this)
-      .parent()
-      .find("span")
-      .text(String(stepValue.toFixed(2).substr(2)) + "%");
-  });
-$(".p86 .bar").circleProgress({
-  value: 0.86,
-});
-$(".p82 .bar").circleProgress({
-  value: 0.82,
-});
-$(".p85 .bar").circleProgress({
-  value: 0.85,
-});
-$(".p80 .bar").circleProgress({
-  value: 0.8,
-});
-$(".p84 .bar").circleProgress({
-  value: 0.84,
-});
-$(".p79 .bar").circleProgress({
-  value: 0.79,
-});
-$(".p73 .bar").circleProgress({
-  value: 0.73,
-});
-$(".p67 .bar").circleProgress({
-  value: 0.67,
-  fill: { color: "#c8ca2e" },
-});
 
 let imgTreler = document.querySelectorAll(".style_2 .image .wrapper");
 for (let j = 0; j < imgTreler.length; j++) {

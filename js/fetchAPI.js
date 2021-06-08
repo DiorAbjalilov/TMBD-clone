@@ -8,9 +8,9 @@ fetch(url)
   .then((movies) => {
     let { results } = movies;
     results.forEach((item) => {
-      let { poster_path } = item;
-      // console.log(poster_path);
-      Movies.getMovieImg(poster_path);
+      let { poster_path, title, original_title, release_date } = item;
+    //   console.log(item);
+      Movies.getMovieImg(poster_path, title, original_title, release_date);
     });
   })
   .catch(function (err) {
@@ -18,7 +18,7 @@ fetch(url)
   });
 let i = 0;
 class Movies {
-  static getMovieImg(img_id) {
+  static getMovieImg(img_id, title, name, dataName) {
     fetch(`https://image.tmdb.org/t/p/w500${img_id}`)
       .then((res) => res)
       .then((imges) => {
@@ -35,7 +35,7 @@ class Movies {
         divImage.innerHTML = `
                 <div class="wrapper">
                     <a href="#">
-                        <img src="${url}" alt="">
+                        <img src="${url}" alt="${title}">
                     </a>
                 </div>
                 <div class="options">
@@ -44,6 +44,21 @@ class Movies {
                     </a>
                 </div>
                 `;
+                divContent.innerHTML = `
+                <div class="consensus tight">
+                    <div class="outer_ring">
+                        <div class="circle p82">
+                            <div class="bar"></div>
+                            <div class="box"><span></span></div>
+                        </div>
+                    </div>
+                </div>
+                <h2>
+                    <a href="#">${name}</a>
+                </h2>
+                <p>${dataName}</p>
+                        `;
+
             })
             .catch((err) => {
                 console.log(err, "error comunt");
