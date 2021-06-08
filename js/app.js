@@ -1,8 +1,6 @@
 let searchBtn = document.querySelector("header .langIcon .searchIcon");
 let searchInt = document.querySelector(".inputSearch input");
 let searchBlock = document.querySelector(".inputSearch");
-console.log(searchBtn);
-console.log(searchInt);
 let ros = { is: true };
 
 searchBtn.addEventListener("click", (e) => {
