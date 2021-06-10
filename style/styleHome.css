@@ -14,6 +14,18 @@ html {
   --tmdbLogoRed: 217, 59, 99;
   --tmdbLogoGreen: 144, 206, 161;
   --taw2020Teal: 164, 212, 214;
+  --accountGreen: 1,210,119;
+    --accountTeal: 1,198,172;
+    --accountLightBlue: 1,180,228;
+    --accountBlue: 1,119,210;
+    --accountBlue: 1,119,210;
+    --accountOrange: 210,119,1;
+    --accountYellow: 210,144,1;
+    --accountRed: 212,2,66;
+    --imageBorderRadius: 8px;
+    --maxPrimaryPageWidth: 1400px;
+    --scrollerGrey: 219,219,219;
+    --lightGrey: 227,227,227;
 }
 * {
   margin: 0;
