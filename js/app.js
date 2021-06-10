@@ -1,6 +1,8 @@
 let searchBtn = document.querySelector("header .langIcon .searchIcon");
 let searchInt = document.querySelector(".inputSearch input");
 let searchBlock = document.querySelector(".inputSearch");
+let search_results=document.querySelector('.show_search_true');
+let showMovie=document.querySelector('#main1');
 let ros = { is: true };
 
 searchBtn.addEventListener("click", (e) => {
@@ -18,3 +20,19 @@ searchBtn.addEventListener("click", (e) => {
     searchBlock.style.display = "none";
   }
 });
+
+
+searchInt.addEventListener('change', (e)=>{
+  e.preventDefault();
+  searchInt.style.display='block';
+  showMovie.style.display='none';
+  search_results.style.display='block';
+})
+window.addEventListener('scroll', (e)=>{
+  if(window.scrollY>15){
+    searchBlock.style.top='0'
+  }
+  else {
+    searchBlock.style.top='65px'
+  }
+})

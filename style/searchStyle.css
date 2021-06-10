@@ -1,5 +1,6 @@
 main.show_search_true {
     margin-top: 109px;
+    display: none;
 }
 main {
     width: 100%;
