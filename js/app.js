@@ -27,7 +27,7 @@ searchInt.addEventListener('change', (e)=>{
   searchInt.style.display='block';
   showMovie.style.display='none';
   search_results.style.display='block';
-  getFetchTvSearch(searchInt.value)
+  getFetchSearch(searchInt.value)
 })
 window.addEventListener('scroll', (e)=>{
   if(window.scrollY>15){
@@ -42,17 +42,16 @@ window.addEventListener('scroll', (e)=>{
 let value=searchInt.value
 
 // function get fetch api
-let serchTvBlock=document.querySelector('.search_results.tv')
+let serchHtmlBlock=document.querySelector('.search_results.movie')
 let resultsMov=document.createElement('div');
-serchTvBlock.appendChild(resultsMov)
+serchHtmlBlock.appendChild(resultsMov)
 resultsMov.className='results flex';
 
-function getFetchTvSearch(value){
-  let url=`https://api.themoviedb.org/3/search/tv?api_key=${apiKey}&query=${value}`;
+function getFetchSearch(value, cateygor='tv'){
+  let url=`https://api.themoviedb.org/3/search/${cateygor}?api_key=${apiKey}&query=${value}`;
     fetch(url).then((res)=>res.json())
     .then((search)=>{
-      console.log(search);
-        let {results, total_results}=search;
+        let {results}=search;
         results.forEach(element => {
           console.log(element);
             let {poster_path, original_name, first_air_date, overview}=element
@@ -115,91 +114,20 @@ function getFetchTvSearch(value){
   }
 }
 
-let serchMovBlock=document.querySelector('.search_results.movie');
-function getFetchMovieSearch(value){
-  let resultsMov=document.createElement('div');
-  serchMovBlock.appendChild(resultsMov)
-  resultsMov.className='results flex';
-  let url=`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${value}`;
-    fetch(url).then((res)=>res.json())
-    .then((search)=>{
-      console.log(search);
-        let {results}=search;
-        results.forEach(element => {
-          console.log(element);
-            let {poster_path, original_title, release_date, overview}=element
-            Movies.getMovieImg(poster_path, original_title, release_date, overview);
-        });
-    }).catch((err)=>{
-      console.log(err, "error com");
-    })
-
-    class Movies{
-      static getMovieImg(poster_path, original_name, first_air_date, overview){
-          fetch(`https://image.tmdb.org/t/p/w500${poster_path}`)
-          .then((res) => res)
-          .then((imges) => {
-            let {url}=imges;
-              let cardSearch=document.createElement('div');
-              let wrapperSearch=document.createElement('div');
-              let imageSearch=document.createElement('div');
-              let detalisSearch=document.createElement('div');
-              cardSearch.className='card v4 tight';
-              wrapperSearch.className='wrapper';
-              imageSearch.className='image';
-              detalisSearch.className='details';
-
-              resultsMov.appendChild(cardSearch);
-              cardSearch.appendChild(wrapperSearch);
-              wrapperSearch.appendChild(imageSearch);
-              wrapperSearch.appendChild(detalisSearch);
-              imageSearch.innerHTML=`
-                <div class="poster">
-                  <a class="result" href="#">
-                      <img class="poster" src="${url}" alt="">
-                  </a>
-                </div>
-              `;
-              detalisSearch.innerHTML=`
-                <div class="wrapper">
-                  <div class="title">
-                      <div>
-                          <a href="#" class="result">
-                              <h2>${original_name}</h2>
-                          </a>
-                      </div>
-                      <span class="release_date">
-                          ${first_air_date}
-                      </span>
-                  </div>
-                </div>
-                <div class="overview">
-                    <p>
-                        ${overview}
-                    </p>
-                </div>
-              `;
-          })
-          .catch((err) => {
-              console.log(err, 'error comunt');
-          });
-      }
-  }
-}
 
 let serachDiv=document.querySelectorAll('.settings li');
 let searchBlockDiv=document.querySelectorAll('.panel .search_results')
 for (let i=0; i<serachDiv.length; i++){
   serachDiv[i].addEventListener('click', (e)=>{
     e.preventDefault();
+    let categor=e.target.id;
+    console.log(categor);
     for(let j=0; j<serachDiv.length; j++){
       serachDiv[j].className='';
-      searchBlockDiv[j].classList.add('hide');
     }
     serachDiv[i].className='selected';
-    searchBlockDiv[i].classList.remove('hide')
     value=searchInt.value
-    // getFetchTvSearch(value);
-    getFetchMovieSearch(value)
+    resultsMov.innerHTML='';
+    getFetchSearch(value, categor);
   })
 }
