@@ -39,21 +39,21 @@ window.addEventListener('scroll', (e)=>{
 })
 
 
-// let value=searchInt.value
+let value=searchInt.value
 
 // function get fetch api
 let serchHtmlBlock=document.querySelector('.search_results.movie')
 let resultsMov=document.createElement('div');
-resultsMov.className='results flex';
 serchHtmlBlock.appendChild(resultsMov)
+resultsMov.className='results flex';
 
-function getFetchSearch(value){
-  let url=`https://api.themoviedb.org/3/search/tv?api_key=${apiKey}&query=${value}`;
+function getFetchSearch(value, cateygor='tv'){
+  let url=`https://api.themoviedb.org/3/search/${cateygor}?api_key=${apiKey}&query=${value}`;
     fetch(url).then((res)=>res.json())
     .then((search)=>{
-        let {results}=search
+        let {results}=search;
         results.forEach(element => {
-            // console.log(element);
+          console.log(element);
             let {poster_path, original_name, first_air_date, overview}=element
             Movies.getMovieImg(poster_path, original_name, first_air_date, overview);
         });
@@ -67,8 +67,6 @@ function getFetchSearch(value){
           .then((res) => res)
           .then((imges) => {
             let {url}=imges;
-            // console.log(imges);
-            
               let cardSearch=document.createElement('div');
               let wrapperSearch=document.createElement('div');
               let imageSearch=document.createElement('div');
@@ -108,11 +106,31 @@ function getFetchSearch(value){
                     </p>
                 </div>
               `;
-              // console.log(resultsMov);
           })
           .catch((err) => {
               console.log(err, 'error comunt');
           });
       }
   }
+}
+
+
+let serachDiv=document.querySelectorAll('.settings li');
+let searchBlockDiv=document.querySelectorAll('.panel .search_results')
+for (let i=0; i<serachDiv.length; i++){
+  serachDiv[i].addEventListener('click', (e)=>{
+    e.preventDefault();
+    let categor=e.target.id;
+    console.log(categor);
+    for(let j=0; j<serachDiv.length; j++){
+      serachDiv[j].className='';
+      // searchBlockDiv[j].classList.add('hide');
+    }
+    serachDiv[i].className='selected';
+    // searchBlockDiv[i].classList.remove('hide')
+    value=searchInt.value
+    // console.log(value);
+    resultsMov.innerHTML='';
+    getFetchSearch(value, categor);
+  })
 }

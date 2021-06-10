@@ -305,3 +305,6 @@ div.card.v4.tight div.details div.overview p {
 div.card.v4+div.card {
     margin-top: 20px;
 }
+.hide {
+    display: none !important;
+}
