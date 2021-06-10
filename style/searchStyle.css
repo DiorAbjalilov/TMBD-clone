@@ -302,3 +302,6 @@ div.card.v4.tight div.details div.overview p {
     overflow: hidden;
     margin: 0;
 }
+div.card.v4+div.card {
+    margin-top: 20px;
+}

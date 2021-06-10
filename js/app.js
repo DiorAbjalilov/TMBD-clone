@@ -27,6 +27,7 @@ searchInt.addEventListener('change', (e)=>{
   searchInt.style.display='block';
   showMovie.style.display='none';
   search_results.style.display='block';
+  getFetchSearch(searchInt.value)
 })
 window.addEventListener('scroll', (e)=>{
   if(window.scrollY>15){
@@ -36,3 +37,82 @@ window.addEventListener('scroll', (e)=>{
     searchBlock.style.top='65px'
   }
 })
+
+
+// let value=searchInt.value
+
+// function get fetch api
+let serchHtmlBlock=document.querySelector('.search_results.movie')
+let resultsMov=document.createElement('div');
+resultsMov.className='results flex';
+serchHtmlBlock.appendChild(resultsMov)
+
+function getFetchSearch(value){
+  let url=`https://api.themoviedb.org/3/search/tv?api_key=${apiKey}&query=${value}`;
+    fetch(url).then((res)=>res.json())
+    .then((search)=>{
+        let {results}=search
+        results.forEach(element => {
+            // console.log(element);
+            let {poster_path, original_name, first_air_date, overview}=element
+            Movies.getMovieImg(poster_path, original_name, first_air_date, overview);
+        });
+    }).catch((err)=>{
+      console.log(err, "error com");
+    })
+
+    class Movies{
+      static getMovieImg(poster_path, original_name, first_air_date, overview){
+          fetch(`https://image.tmdb.org/t/p/w500${poster_path}`)
+          .then((res) => res)
+          .then((imges) => {
+            let {url}=imges;
+            // console.log(imges);
+            
+              let cardSearch=document.createElement('div');
+              let wrapperSearch=document.createElement('div');
+              let imageSearch=document.createElement('div');
+              let detalisSearch=document.createElement('div');
+              cardSearch.className='card v4 tight';
+              wrapperSearch.className='wrapper';
+              imageSearch.className='image';
+              detalisSearch.className='details';
+
+              resultsMov.appendChild(cardSearch);
+              cardSearch.appendChild(wrapperSearch);
+              wrapperSearch.appendChild(imageSearch);
+              wrapperSearch.appendChild(detalisSearch);
+              imageSearch.innerHTML=`
+                <div class="poster">
+                  <a class="result" href="#">
+                      <img class="poster" src="${url}" alt="">
+                  </a>
+                </div>
+              `;
+              detalisSearch.innerHTML=`
+                <div class="wrapper">
+                  <div class="title">
+                      <div>
+                          <a href="#" class="result">
+                              <h2>${original_name}</h2>
+                          </a>
+                      </div>
+                      <span class="release_date">
+                          ${first_air_date}
+                      </span>
+                  </div>
+                </div>
+                <div class="overview">
+                    <p>
+                        ${overview}
+                    </p>
+                </div>
+              `;
+              // console.log(resultsMov);
+          })
+          .catch((err) => {
+              console.log(err, 'error comunt');
+          });
+      }
+  }
+}
